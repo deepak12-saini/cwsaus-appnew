@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   # CakePHP 4: use webroot/ (not app/webroot/)
+   RewriteRule    ^$ webroot/    [L]
+   RewriteRule    (.*) webroot/$1 [L]
+</IfModule>

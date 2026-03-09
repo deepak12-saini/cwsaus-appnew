@@ -1,0 +1,29 @@
+<pre>Array
+(
+    [Called] => +14803861240
+    [ToState] => AZ
+    [CallerCountry] => IN
+    [Direction] => inbound
+    [CallerState] => Punjab
+    [ToZip] => 
+    [CallSid] => CAcdf2886137b14759dbad5a0411c3aa28
+    [To] => +14803861240
+    [CallerZip] => 
+    [ToCountry] => US
+    [ApiVersion] => 2010-04-01
+    [CalledZip] => 
+    [CalledCity] => 
+    [CallStatus] => ringing
+    [From] => +919316099448
+    [AccountSid] => AC146e27a2763786a120535c184598ff02
+    [CalledCountry] => US
+    [CallerCity] => 
+    [Caller] => +919316099448
+    [FromCountry] => IN
+    [ToCity] => 
+    [FromCity] => 
+    [CalledState] => AZ
+    [FromZip] => 
+    [FromState] => Punjab
+)
+</pre>

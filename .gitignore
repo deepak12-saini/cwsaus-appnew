@@ -1,0 +1,38 @@
+# CakePHP
+/config/app_local.php
+/logs/*
+!/logs/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
+!/tmp/cache/
+!/tmp/cache/models/
+!/tmp/cache/persistent/
+!/tmp/cache/views/
+!/tmp/sessions/
+!/tmp/tests/
+
+# Vendor (run composer install after clone)
+/vendor/
+
+# Custom/third-party (WordPress, etc.)
+/custom/
+
+# Environment
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploaded files (optional - remove if you want to track)
+/webroot/gallery/*
+/webroot/blog_img/*
+!/webroot/gallery/.gitkeep
+!/webroot/blog_img/.gitkeep

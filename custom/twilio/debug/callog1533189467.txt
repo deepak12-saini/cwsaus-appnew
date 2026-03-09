@@ -1,0 +1,29 @@
+<pre>Array
+(
+    [Called] => +14803861240
+    [ToState] => AZ
+    [CallerCountry] => LS
+    [Direction] => inbound
+    [CallerState] => 
+    [ToZip] => 
+    [CallSid] => CA9e4a1a8bad3420238e9eac54c30f230b
+    [To] => +14803861240
+    [CallerZip] => 
+    [ToCountry] => US
+    [ApiVersion] => 2010-04-01
+    [CalledZip] => 
+    [CalledCity] => 
+    [CallStatus] => ringing
+    [From] => +266696687
+    [AccountSid] => AC146e27a2763786a120535c184598ff02
+    [CalledCountry] => US
+    [CallerCity] => 
+    [Caller] => +266696687
+    [FromCountry] => LS
+    [ToCity] => 
+    [FromCity] => 
+    [CalledState] => AZ
+    [FromZip] => 
+    [FromState] => 
+)
+</pre>

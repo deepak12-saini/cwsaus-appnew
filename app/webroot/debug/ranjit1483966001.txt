@@ -1,0 +1,7 @@
+<pre>Array
+(
+    [my_app] => te9t0g6qtrkhs0cvrrd51lfl67
+    [cpsession] => neildev:iFTpjfHEwxBPbDWp,67973118e9de7f5b389c8d44f2c91ef9
+    [timezone] => Asia/Kolkata
+)
+</pre>
