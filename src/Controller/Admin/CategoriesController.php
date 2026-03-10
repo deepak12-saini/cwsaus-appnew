@@ -72,6 +72,14 @@ class CategoriesController extends AppController
     {
         $this->checkAdminSession();
         $category = $this->fetchTable('Categories')->get($id);
+        $blogsCount = $this->fetchTable('Blogs')->find()->where(['category_id' => $id])->count();
+        if ($blogsCount > 0) {
+            $this->Flash->error(
+                "Cannot delete this category because it has {$blogsCount} blog(s) associated with it. " .
+                'Please move or delete those blogs first.'
+            );
+            return $this->redirect(['action' => 'index']);
+        }
         if ($this->fetchTable('Categories')->delete($category)) {
             $this->Flash->success('The category has been deleted.');
         } else {

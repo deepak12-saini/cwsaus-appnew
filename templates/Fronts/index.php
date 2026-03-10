@@ -61,7 +61,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
         echo 'CWS Australia provides professional construction chemical solutions, waterproofing, and building products across Australia.';
       }
     ?></p>
-    <a href="<?= $this->Url->build('/about') ?>">Read More</a>
+    <a href="<?= $siteUrl ?>about">Read More</a>
   </div>
 </section>
 <!-- End About -->
@@ -140,7 +140,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
         <div class="container_service">
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#F3FAFF;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/bucket.png" alt=""></div>
               <h3 class="h2_color">Liquid Membrane</h3>
               <p class="p_color">A wide range of Liquid Membrane</p>
@@ -148,7 +148,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
           </div>
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#fff;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/Layer_x0020_1.png" alt=""></div>
               <h3 class="h2_color">Sheet Membrane</h3>
               <p class="p_color">Best quality sheet membranes.</p>
@@ -156,7 +156,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
           </div>
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#F3FAFF;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/Group%2065.png" alt=""></div>
               <h3 class="h2_color">Cementious Membrane</h3>
               <p class="p_color">Cement Based Membrane</p>
@@ -164,7 +164,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
           </div>
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#fff;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/Group%2064.png" alt=""></div>
               <h3 class="h2_color">Flooring</h3>
               <p class="p_color">Best product for flooring solutions</p>
@@ -172,7 +172,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
           </div>
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#F3FAFF;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/sealant-1.png" alt=""></div>
               <h3 class="h2_color">Sealant</h3>
               <p class="p_color">A wide range of best quality Sealant</p>
@@ -180,7 +180,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
           </div>
           <div class="col-md-4 tab_service" style="background:#f7f7f7;">
             <div class="images" style="background:#fff;">
-              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $this->Url->build('/products') ?>">View All</a></span></div>
+              <div class="div_right"><span class="spn_right"><a style="color:#000;" href="<?= $siteUrl . 'products' ?>">View All</a></span></div>
               <div class="img_left"><img src="<?= $siteUrl ?>front_theme/logo/Page-1.png" alt=""></div>
               <h3 class="h2_color">Adhesives</h3>
               <p class="p_color">Adhesives products with good adhesion</p>

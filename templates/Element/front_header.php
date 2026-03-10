@@ -43,14 +43,14 @@ $action = $this->request->getParam('action');
           <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right main-nav" style="margin-top: 13px;">
               <li class="<?= ($controller === 'Fronts' && $action === 'index') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>">Home</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'about') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/about') ?>">About Us</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'products') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/products') ?>">Products</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'suppliers') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/suppliers') ?>">Suppliers</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'consulting') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/consulting') ?>">Consulting</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'promotions') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/promotions') ?>">Promotions</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'services') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/our-services') ?>">Our Service</a></li>
-              <li class="<?= ($controller === 'Blogs') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/blog') ?>">Blog</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'contact') ? 'active' : '' ?>"><a href="<?= $this->Url->build('/contact-us') ?>">Contact</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'about') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>about">About Us</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'products') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>products">Products</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'suppliers') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>suppliers">Suppliers</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'consulting') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>consulting">Consulting</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'promotions') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>promotions">Promotions</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'services') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>our-services">Our Service</a></li>
+              <li class="<?= $controller === 'Blogs' ? 'active' : '' ?>"><a href="<?= $siteUrl ?>blog">Blog</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'contact') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>contact-us">Contact</a></li>
             </ul>
           </div>
         </div>

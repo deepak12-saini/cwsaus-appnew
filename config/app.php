@@ -17,7 +17,7 @@ return [
         'encoding' => env('APP_ENCODING', 'UTF-8'),
         'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
         'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'Australia/Sydney'),
-        'base' => env('APP_BASE', '/cwsaus'),
+        'base' => env('APP_BASE', '/'),
         'dir' => 'src',
         'webroot' => 'webroot',
         'fullBaseUrl' => env('FULL_BASE_URL', ''),
@@ -36,6 +36,7 @@ return [
         'defaults' => 'php',
         'cookie' => 'cwsaus',
         'timeout' => 4320,
+        'cookiePath' => '/',
     ],
     'Cache' => [
         'default' => [

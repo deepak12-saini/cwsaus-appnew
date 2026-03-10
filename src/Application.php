@@ -31,7 +31,20 @@ class Application extends BaseApplication
     public function routes(RouteBuilder $routes): void
     {
         $routes->setRouteClass('Cake\Routing\Route\DashedRoute');
-        // Home page first so / and '' always match before fallbacks
+        // When App.base is '/', CakePHP strips it so path becomes "about" (no leading slash).
+        // Routes with template "about" (scope '') index staticPaths["about"] and match.
+        $routes->scope('', function (RouteBuilder $routes) {
+            $routes->connect('admin', ['controller' => 'Users', 'action' => 'login', 'prefix' => 'Admin']);
+            $routes->connect('about', ['controller' => 'Fronts', 'action' => 'about'], ['_name' => 'about']);
+            $routes->connect('products', ['controller' => 'Fronts', 'action' => 'products']);
+            $routes->connect('suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
+            $routes->connect('consulting', ['controller' => 'Fronts', 'action' => 'consulting']);
+            $routes->connect('promotions', ['controller' => 'Fronts', 'action' => 'promotions']);
+            $routes->connect('our-services', ['controller' => 'Fronts', 'action' => 'services']);
+            $routes->connect('contact-us', ['controller' => 'Fronts', 'action' => 'contact']);
+            $routes->connect('blog', ['controller' => 'Blogs', 'action' => 'index']);
+        });
+        // Home
         $routes->connect('/', ['controller' => 'Fronts', 'action' => 'index']);
         $routes->connect('', ['controller' => 'Fronts', 'action' => 'index']);
         include CONFIG . 'routes.php';

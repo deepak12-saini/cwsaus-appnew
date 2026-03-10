@@ -18,11 +18,11 @@ $linkedinUrl = defined('LINKEDIN_URL') ? LINKEDIN_URL : '#';
           <h3>quick links</h3>
           <ul class="footnav">
             <li><a href="<?= $siteUrl ?>">Home</a></li>
-            <li><a href="<?= $this->Url->build('/about') ?>">About Us</a></li>
-            <li><a href="<?= $this->Url->build('/products') ?>">Products</a></li>
-            <li><a href="<?= $this->Url->build('/suppliers') ?>">Suppliers</a></li>
-            <li><a href="<?= $this->Url->build('/promotions') ?>">Promotions</a></li>
-            <li><a href="<?= $this->Url->build('/contact-us') ?>">Contact Us</a></li>
+            <li><a href="<?= $siteUrl ?>about">About Us</a></li>
+            <li><a href="<?= $siteUrl ?>products">Products</a></li>
+            <li><a href="<?= $siteUrl ?>suppliers">Suppliers</a></li>
+            <li><a href="<?= $siteUrl ?>promotions">Promotions</a></li>
+            <li><a href="<?= $siteUrl ?>contact-us">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-md-4 footlnks emlnwsltr wow fadeInUp" data-wow-duration="1.0s" data-wow-delay="1.0s">

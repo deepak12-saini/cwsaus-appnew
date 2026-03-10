@@ -53,13 +53,13 @@ class AppController extends Controller
         }
     }
 
-    protected function checkAdminSession(): void
+    protected function checkAdminSession(): ?\Cake\Http\Response
     {
         if (!$this->getRequest()->getSession()->read('is_admin')) {
             $this->Flash->error('You need to be logged in to access this area');
-            $this->redirect('/admin');
-            $this->response = $this->response->withStatus(302);
+            return $this->redirect(['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
         }
+        return null;
     }
 
     protected function checkCustomerSession(): void

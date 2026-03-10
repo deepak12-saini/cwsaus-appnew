@@ -24,7 +24,7 @@ $userName = $this->request->getSession()->read('User.name') ?? 'Admin';
                     </a>
                 </li>
                 <li>
-                    <a href="<?= $this->Url->build('/') ?>" target="_blank">
+                    <a href="<?= h($siteUrl) ?>" target="_blank">
                         <i class="ace-icon fa fa-external-link"></i> View Site
                     </a>
                 </li>

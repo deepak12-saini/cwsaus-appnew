@@ -21,18 +21,33 @@ class UsersController extends AppController
             return $this->redirect(['action' => 'dashboard']);
         }
         $data = $this->request->getData();
+        if ($this->request->is('post') && empty($data)) {
+            $this->Flash->error('No form data received. Please check the form and try again.');
+        }
         if (!empty($data)) {
             $usersTable = $this->fetchTable('Users');
+            $username = trim($data['username'] ?? '');
+            $password = $data['password'] ?? '';
             $user = $usersTable->find()->where([
-                'username' => $data['username'] ?? '',
-                'password' => $data['password'] ?? '',
+                'username' => $username,
                 'status' => 1,
                 'user_type' => 2,
             ])->first();
+            $passwordValid = false;
             if ($user) {
+                $storedPassword = $user->password ?? '';
+                if (strpos($storedPassword, '$2') === 0) {
+                    $passwordValid = password_verify($password, $storedPassword);
+                } elseif (strlen($storedPassword) === 32 && ctype_xdigit($storedPassword)) {
+                    $passwordValid = (md5($password) === $storedPassword);
+                } else {
+                    $passwordValid = ($password === $storedPassword);
+                }
+            }
+            if ($user && $passwordValid) {
                 $this->getRequest()->getSession()->write('User', $user->toArray());
                 $this->getRequest()->getSession()->write('is_admin', 1);
-                return $this->redirect(['action' => 'dashboard']);
+                return $this->redirect(['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'dashboard']);
             }
             $this->Flash->error('Wrong username/password');
         }
@@ -46,14 +61,18 @@ class UsersController extends AppController
         return $this->redirect('/admin');
     }
 
-    public function dashboard(): void
+    public function dashboard(): ?Response
     {
         $this->set('title_for_layout', (defined('SITENAME') ? SITENAME : 'CWS') . ' Admin Dashboard Page');
-        $this->checkAdminSession();
+        $redirect = $this->checkAdminSession();
+        if ($redirect) {
+            return $redirect;
+        }
         $quoteRequestCount = $this->fetchTable('QuoteRequests')->find()->count();
         $blogsCount = $this->fetchTable('Blogs')->find()->where(['status' => 1])->count();
         $totalEarning = 0;
         $this->set(compact('totalEarning', 'blogsCount', 'quoteRequestCount'));
+        return null;
     }
 
     public function profile(): ?Response

@@ -23,18 +23,18 @@ $siteName = defined('SITENAME') ? SITENAME : 'CWS Australia';
 
                     <div class="space-6"></div>
 
-                    <?= $this->Form->create(null, ['id' => 'loginForm']) ?>
+                    <form id="loginForm" method="post" action="<?= $this->Url->build('/admin', ['fullBase' => true]) ?>" accept-charset="utf-8">
                     <fieldset>
                         <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autocomplete="username">
                                 <i class="ace-icon fa fa-user"></i>
                             </span>
                         </label>
 
                         <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required autocomplete="current-password">
                                 <i class="ace-icon fa fa-lock"></i>
                             </span>
                         </label>
@@ -42,12 +42,12 @@ $siteName = defined('SITENAME') ? SITENAME : 'CWS Australia';
                         <div class="space"></div>
 
                         <div class="clearfix">
-                            <?= $this->Form->button('Login', ['class' => 'width-35 pull-right btn btn-sm btn-primary']) ?>
+                            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">Login</button>
                         </div>
 
                         <div class="space-4"></div>
                     </fieldset>
-                    <?= $this->Form->end() ?>
+                    </form>
 
                     <div class="toolbar clearfix" style="margin-top: 15px;">
                         <div>
