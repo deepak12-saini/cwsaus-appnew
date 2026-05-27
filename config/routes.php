@@ -31,6 +31,18 @@ $routes->connect('', ['controller' => 'Fronts', 'action' => 'index']);
 $routes->connect('/admin', ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
 $routes->connect('admin', ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
 
+// Explicit admin wildcard routes to avoid /admin being treated as AdminController.
+$routes->connect(
+    '/admin/{controller}',
+    ['prefix' => 'Admin', 'action' => 'index'],
+    ['routeClass' => DashedRoute::class]
+);
+$routes->connect(
+    '/admin/{controller}/{action}/*',
+    ['prefix' => 'Admin'],
+    ['routeClass' => DashedRoute::class]
+);
+
 // Admin prefix
 $routes->prefix('Admin', ['path' => 'admin'], function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Users', 'action' => 'login']);
