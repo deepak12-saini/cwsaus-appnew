@@ -48,7 +48,9 @@ class FrontsController extends AppController
 
     public function products(): void
     {
-        $this->set('title_for_layout', (defined('SITENAME') ? SITENAME : 'CWS') . ' Product');
+        $this->set('title_for_layout', (defined('SITENAME') ? SITENAME : 'CWS') . ' Projects');
+        $galleries = $this->fetchTable('Galleries')->find()->where(['status' => 1])->all();
+        $this->set('Gallery', $galleries);
     }
 
     public function suppliers(): void

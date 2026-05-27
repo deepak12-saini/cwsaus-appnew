@@ -19,7 +19,7 @@ $linkedinUrl = defined('LINKEDIN_URL') ? LINKEDIN_URL : '#';
           <ul class="footnav">
             <li><a href="<?= $siteUrl ?>">Home</a></li>
             <li><a href="<?= $siteUrl ?>about">About Us</a></li>
-            <li><a href="<?= $siteUrl ?>products">Products</a></li>
+            <li><a href="<?= $siteUrl ?>projects">Projects</a></li>
             <li><a href="<?= $siteUrl ?>suppliers">Suppliers</a></li>
             <li><a href="<?= $siteUrl ?>promotions">Promotions</a></li>
             <li><a href="<?= $siteUrl ?>contact-us">Contact Us</a></li>

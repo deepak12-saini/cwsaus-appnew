@@ -10,6 +10,8 @@ $routes->connect('/about', ['controller' => 'Fronts', 'action' => 'about']);
 $routes->connect('about', ['controller' => 'Fronts', 'action' => 'about']);
 $routes->connect('/products', ['controller' => 'Fronts', 'action' => 'products']);
 $routes->connect('products', ['controller' => 'Fronts', 'action' => 'products']);
+$routes->connect('/projects', ['controller' => 'Fronts', 'action' => 'products']);
+$routes->connect('projects', ['controller' => 'Fronts', 'action' => 'products']);
 $routes->connect('/suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
 $routes->connect('suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
 $routes->connect('/consulting', ['controller' => 'Fronts', 'action' => 'consulting']);
@@ -25,8 +27,11 @@ $routes->connect('our-services', ['controller' => 'Fronts', 'action' => 'service
 $routes->connect('/', ['controller' => 'Fronts', 'action' => 'index']);
 $routes->connect('', ['controller' => 'Fronts', 'action' => 'index']);
 
-// Admin prefix: path 'admin' (no leading slash) to match when App.base is '/'
-$routes->prefix('Admin', ['path' => 'admin'], function (RouteBuilder $routes) {
+// Redirect bare /admin to /admin/users/login
+$routes->connect('/admin', ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
+
+// Admin prefix
+$routes->prefix('Admin', ['path' => '/admin'], function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Users', 'action' => 'login']);
     $routes->fallbacks(DashedRoute::class);
 });
