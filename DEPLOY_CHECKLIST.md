@@ -50,10 +50,18 @@ Plesk deploy target: `/httpdocs`
 
 The old CakePHP 2 folders **`app/`** and **`lib/`** are no longer in Git. Production must run CakePHP 4 only (`webroot/index.php` → `templates/`).
 
-If production still has old menu after deploy, **manually delete on server** (one-time cleanup):
+**Linux case sensitivity:** Template folders must be lowercase:
+- `templates/element/` (not `Element/`)
+- `templates/layout/` (not `Layout/`)
+
+If production menu is old but localhost is correct, the server may still be reading `templates/element/front_header.php` (old) while Git updated `templates/Element/` (unused on Linux).
+
+After deploy, **manually delete on server** if they still exist:
 
 - [ ] `httpdocs/app/` (entire folder — legacy CakePHP 2)
 - [ ] `httpdocs/lib/` (legacy CakePHP 2 core)
+- [ ] `httpdocs/templates/Element/` (wrong case — duplicate old copy)
+- [ ] `httpdocs/templates/Layout/` (wrong case)
 
 Then clear cache again.
 
@@ -93,7 +101,7 @@ Use **Ctrl + F5** (or incognito window).
 
 | Symptom | Cause | Fix |
 |---------|--------|-----|
-| Menu shows Suppliers / Our Service | Old `app/` folder still on server | Delete `httpdocs/app/` + clear cache + hard refresh |
+| Menu shows Suppliers / Our Service | Old `templates/element/` on Linux OR old `app/` folder | Deploy lowercase `templates/element/`, delete `app/` and wrong-case `Element/` folder + clear cache |
 | Page shows Services but menu is old | Routes updated, templates not | Full Deploy + verify `templates/Element/front_header.php` |
 | Tab title “Fronts” | Old `front_layout.php` on server | Pull + Deploy latest `templates/Layout/front_layout.php` |
 | LinkedIn goes to `#` | `LINKEDIN_URL=#` in production `.env` | Set correct URL in server `.env` or deploy latest footer |
