@@ -1,5 +1,7 @@
 # Deploy cwsaus (CakePHP 4)
 
+**Before every production release, follow [DEPLOY_CHECKLIST.md](DEPLOY_CHECKLIST.md)** — it prevents partial deploys (e.g. menu shows Suppliers on live but Services on local).
+
 ## GitHub: `cwsaus-appnew`
 
 Remote: `https://github.com/deepak12-saini/cwsaus-appnew.git`

@@ -13,6 +13,11 @@
 # Vendor (run composer install after clone)
 /vendor/
 
+# Legacy CakePHP 2 (not used — CakePHP 4 uses src/, templates/, webroot/)
+/app/
+/lib/
+/vendors/
+
 # Custom/third-party (WordPress, etc.)
 /custom/
 

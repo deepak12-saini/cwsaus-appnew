@@ -152,7 +152,7 @@ $serviceCards = [
 
     <div class="row services-cards-row">
       <?php foreach ($serviceCards as $card) : ?>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="service-card wow fadeInUp" data-wow-duration="1.2s">
           <div class="service-card-icon">
             <i class="fa <?= h($card['icon']) ?>" aria-hidden="true"></i>
