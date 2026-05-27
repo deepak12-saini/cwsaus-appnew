@@ -60,7 +60,7 @@
 			  
               <li  class="<?php if ($this->params['controller']=='fronts' && $this->params['action']=='about') {echo 'active';}?>"><a href="<?php echo SITEURL ;?>about">About Us</a></li>
 			  
-              <li  class="<?php if ($this->params['controller']=='fronts' && $this->params['action']=='products') {echo 'active';}?>"><a href="<?php echo SITEURL ;?>products">Products</a></li>
+              <li  class="<?php if ($this->params['controller']=='fronts' && $this->params['action']=='products') {echo 'active';}?>"><a href="<?php echo SITEURL ;?>projects">Projects</a></li>
 			  
               <li  class="<?php if ($this->params['controller']=='fronts' && $this->params['action']=='suppliers') {echo 'active';}?>"><a href="<?php echo SITEURL ;?>suppliers">Suppliers</a></li>
 			  

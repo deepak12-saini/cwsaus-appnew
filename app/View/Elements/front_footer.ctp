@@ -13,7 +13,7 @@
             <li><a href="<?php echo SITEURL ;?>">Home</a></li>
           
             <li><a href="<?php echo SITEURL ;?>about">About Us</a></li>
-			  <li><a href="<?php echo SITEURL ;?>">Products</a></li>
+			  <li><a href="<?php echo SITEURL ;?>projects">Projects</a></li>
 			   <li><a href="<?php echo SITEURL ;?>">Suppliers</a></li>
 			    <li><a href="<?php echo SITEURL ;?>">Promotions</a></li>
 			   
