@@ -4,12 +4,11 @@
 !/logs/.gitkeep
 /tmp/*
 !/tmp/.gitkeep
-!/tmp/cache/
-!/tmp/cache/models/
-!/tmp/cache/persistent/
-!/tmp/cache/views/
-!/tmp/sessions/
-!/tmp/tests/
+!/tmp/sessions/.gitkeep
+!/tmp/tests/.gitkeep
+/tmp/cache/**
+!/tmp/cache/.gitkeep
+/tmp/logs/**
 
 # Vendor (run composer install after clone)
 /vendor/
@@ -20,6 +19,7 @@
 # Environment
 .env
 .env.*
+!.env.example
 
 # IDE
 .idea/

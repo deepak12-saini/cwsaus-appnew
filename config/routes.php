@@ -5,13 +5,25 @@ use Cake\Routing\RouteBuilder;
 
 $routes->setRouteClass(DashedRoute::class);
 
-// Single-segment routes defined in Application.php (scope '') for path "about" etc.
-// Home: match '/', '' and /cwsaus/
+// Single-segment front routes (must be before fallbacks or DashedRoute maps /about -> AboutController)
+$routes->connect('/about', ['controller' => 'Fronts', 'action' => 'about']);
+$routes->connect('about', ['controller' => 'Fronts', 'action' => 'about']);
+$routes->connect('/products', ['controller' => 'Fronts', 'action' => 'products']);
+$routes->connect('products', ['controller' => 'Fronts', 'action' => 'products']);
+$routes->connect('/suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
+$routes->connect('suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
+$routes->connect('/consulting', ['controller' => 'Fronts', 'action' => 'consulting']);
+$routes->connect('consulting', ['controller' => 'Fronts', 'action' => 'consulting']);
+$routes->connect('/promotions', ['controller' => 'Fronts', 'action' => 'promotions']);
+$routes->connect('promotions', ['controller' => 'Fronts', 'action' => 'promotions']);
+$routes->connect('/contact-us', ['controller' => 'Fronts', 'action' => 'contact']);
+$routes->connect('contact-us', ['controller' => 'Fronts', 'action' => 'contact']);
+$routes->connect('/our-services', ['controller' => 'Fronts', 'action' => 'services']);
+$routes->connect('our-services', ['controller' => 'Fronts', 'action' => 'services']);
+
+// Home: match '/' and ''
 $routes->connect('/', ['controller' => 'Fronts', 'action' => 'index']);
 $routes->connect('', ['controller' => 'Fronts', 'action' => 'index']);
-$routes->connect('/cwsaus', ['controller' => 'Fronts', 'action' => 'index']);
-$routes->connect('/cwsaus/', ['controller' => 'Fronts', 'action' => 'index']);
-$routes->connect('/our-services', ['controller' => 'Fronts', 'action' => 'services']);
 
 // Admin prefix: path 'admin' (no leading slash) to match when App.base is '/'
 $routes->prefix('Admin', ['path' => 'admin'], function (RouteBuilder $routes) {

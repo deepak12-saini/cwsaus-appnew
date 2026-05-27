@@ -74,11 +74,36 @@ if (file_exists(CONFIG . 'app_local.php')) {
     Configure::load('app_local', 'default');
 }
 
-// When app is in a subdirectory (e.g. /cwsaus/webroot/), set base so routing path is stripped correctly
-if (Configure::read('App.base') === false && !empty($_SERVER['PHP_SELF'])) {
-    $base = dirname(str_replace('\\', '/', $_SERVER['PHP_SELF']));
-    if ($base !== '/' && $base !== '' && $base !== '.') {
-        Configure::write('App.base', $base);
+// Subdirectory install (e.g. http://localhost/cwsaus/) — production uses document root so base stays "/"
+if (!empty($_SERVER['PHP_SELF'])) {
+    $configuredBase = Configure::read('App.base');
+    $shouldDetect = $configuredBase === false
+        || $configuredBase === null
+        || $configuredBase === '/'
+        || $configuredBase === '';
+
+    if ($shouldDetect) {
+        $scriptDir = dirname(str_replace('\\', '/', $_SERVER['PHP_SELF']));
+        if (strpos($scriptDir, '/index.php') !== false) {
+            $scriptDir = substr($scriptDir, 0, strpos($scriptDir, '/index.php'));
+        }
+        $webrootFolder = Configure::read('App.webroot') ?: 'webroot';
+        $webrootSuffix = '/' . $webrootFolder;
+        if (strlen($scriptDir) >= strlen($webrootSuffix)
+            && substr($scriptDir, -strlen($webrootSuffix)) === $webrootSuffix
+        ) {
+            $scriptDir = dirname($scriptDir);
+        }
+        if ($scriptDir === '/' || $scriptDir === '.' || $scriptDir === '\\') {
+            $scriptDir = '';
+        }
+        if ($scriptDir !== '' && $scriptDir !== $configuredBase) {
+            Configure::write('App.base', $scriptDir);
+            $sessionPath = Configure::read('Session.cookiePath');
+            if ($sessionPath === '/' || $sessionPath === null || $sessionPath === '') {
+                Configure::write('Session.cookiePath', $scriptDir . '/');
+            }
+        }
     }
 }
 
@@ -109,7 +134,13 @@ if (!$fullBaseUrl) {
     $httpHost = env('HTTP_HOST');
     $fullBaseUrl = isset($httpHost) ? ('http' . $s . '://' . $httpHost) : 'http://localhost';
 }
-Router::fullBaseUrl($fullBaseUrl);
+// Use scheme + host only; App.base (/cwsaus) is added by the router — avoids /cwsaus/cwsaus/ URLs
+$parsed = parse_url($fullBaseUrl);
+if (!empty($parsed['scheme']) && !empty($parsed['host'])) {
+    $port = isset($parsed['port']) ? (':' . $parsed['port']) : '';
+    $fullBaseUrl = $parsed['scheme'] . '://' . $parsed['host'] . $port;
+}
+Router::fullBaseUrl(rtrim($fullBaseUrl, '/'));
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
