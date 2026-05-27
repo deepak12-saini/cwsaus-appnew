@@ -27,11 +27,12 @@ $routes->connect('our-services', ['controller' => 'Fronts', 'action' => 'service
 $routes->connect('/', ['controller' => 'Fronts', 'action' => 'index']);
 $routes->connect('', ['controller' => 'Fronts', 'action' => 'index']);
 
-// Redirect bare /admin to /admin/users/login
+// Redirect bare admin path to admin login (support both with/without leading slash)
 $routes->connect('/admin', ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
+$routes->connect('admin', ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'login']);
 
 // Admin prefix
-$routes->prefix('Admin', ['path' => '/admin'], function (RouteBuilder $routes) {
+$routes->prefix('Admin', ['path' => 'admin'], function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Users', 'action' => 'login']);
     $routes->fallbacks(DashedRoute::class);
 });
