@@ -4,7 +4,7 @@ $email = defined('EMAIL') ? EMAIL : 'info@cwsaus.com.au';
 $fbUrl = defined('FB_URL') ? FB_URL : '#';
 $twitterUrl = defined('TWITTER_URL') ? TWITTER_URL : '#';
 $gplusUrl = defined('GPLUS_URL') ? GPLUS_URL : '#';
-$linkedinUrl = defined('LINKEDIN_URL') ? LINKEDIN_URL : '#';
+$linkedinUrl = defined('LINKEDIN_URL') ? LINKEDIN_URL : 'https://www.linkedin.com/company/construction-waterproofing-solutoins/people/';
 ?>
 <footer id="footer">
   <div class="container">
@@ -34,7 +34,7 @@ $linkedinUrl = defined('LINKEDIN_URL') ? LINKEDIN_URL : '#';
             <li><a href="<?= h($fbUrl) ?>"><i class="fa fa-facebook"></i></a></li>
             <li><a href="<?= h($twitterUrl) ?>"><i class="fa fa-twitter"></i></a></li>
             <li><a href="<?= h($gplusUrl) ?>"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="<?= h($linkedinUrl) ?>"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="<?= h($linkedinUrl) ?>" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
