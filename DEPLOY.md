@@ -50,3 +50,19 @@ rm -rf tmp/cache/*
 - Real `SECURITY_SALT` and `EMAIL_PASSWORD`
 
 See `.env.example` for all keys.
+
+## About page — production database (optional)
+
+After deploying the About template update, run in phpMyAdmin or MySQL:
+
+```sql
+-- See config/queries/update_about_menu_page.sql
+UPDATE menu_pages SET
+  banner_sub_text = 'Professional waterproofing contracting & installation across Australia',
+  main_title = 'About Us',
+  content = 'CWS Australia is a professional waterproofing contracting and installation company. With over 100 years of combined experience across our national team, we are a preferred choice for domestic and national builders, constructors, and commercial clients.',
+  updated_at = NOW()
+WHERE id = 1;
+```
+
+Main About copy is in `templates/Fronts/about.php`; this SQL updates the banner subtitle only.

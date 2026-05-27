@@ -778,6 +778,86 @@ ul.footsclicn { float: left; padding: 0 0 0 15px; }
   width: 100%;
 }
 
+/* About page — two-column layout (Apex-style) */
+#abtsec.about-page {
+  padding: 60px 0 80px;
+}
+
+#abtsec.about-page .about-page-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#abtsec.about-page .about-page-visual {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#abtsec.about-page .about-page-image-wrap {
+  padding: 20px 30px;
+}
+
+#abtsec.about-page .about-page-image {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+#abtsec.about-page .about-page-content .title-area {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#abtsec.about-page .about-page-content .title-area .title {
+  letter-spacing: 6px;
+  font-size: 22px;
+}
+
+#abtsec.about-page .about-page-content .title-area .line {
+  margin-left: 0;
+}
+
+#abtsec.about-page .about-page-text p {
+  color: #595959;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  margin: 0 0 18px;
+  text-align: left;
+  float: none;
+  width: 100%;
+}
+
+#abtsec.about-page .about-page-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  #abtsec.about-page .about-page-visual {
+    margin-bottom: 25px;
+  }
+  #abtsec.about-page .about-page-content .title-area {
+    text-align: center;
+  }
+  #abtsec.about-page .about-page-content .title-area .line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  #abtsec.about-page {
+    padding: 40px 0 50px;
+  }
+  #abtsec.about-page .about-page-image {
+    max-width: 220px;
+  }
+}
+
 /*--------------------*/
 /* Service Page */
 /*--------------------*/
