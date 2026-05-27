@@ -2,9 +2,9 @@
 $siteUrl = defined('SITEURL') ? SITEURL : $this->Url->build('/', true);
 $siteUrl = rtrim($siteUrl ?? '', '/') . '/';
 $canonicalUrl = rtrim($this->Url->build($this->request->getRequestTarget(), ['fullBase' => true]), '/');
-$pageTitle = $this->fetch('title') ?: ($title_for_layout ?? 'CWS Australia');
-$pageDesc = $this->fetch('meta_description') ?: 'CWS Australia – Professional waterproofing contracting, installation and supply across Sydney, Newcastle, Melbourne, Brisbane and nationwide.';
-$pageKeywords = $this->fetch('meta_keywords') ?: 'waterproofing Sydney, construction waterproofing Australia, waterproofing contractor, membrane installation, CWS Australia';
+$pageTitle = $title_for_layout ?? 'CWS Australia';
+$pageDesc = $this->get('meta_description') ?: 'CWS Australia – Professional waterproofing contracting, installation and supply across Sydney, Newcastle, Melbourne, Brisbane and nationwide.';
+$pageKeywords = $this->get('meta_keywords') ?: 'waterproofing Sydney, construction waterproofing Australia, waterproofing contractor, membrane installation, CWS Australia';
 ?>
 <!DOCTYPE html>
 <html lang="en">
