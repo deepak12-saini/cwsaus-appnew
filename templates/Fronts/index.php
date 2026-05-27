@@ -13,24 +13,90 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
 .ValidationErrors{ display:none !important; }
 .active{ background:#f9a51a!important;}
 .active_new{ background:#f9a51a !important;}
-#bannersec { height: 600px; }
-@media only screen and (max-width: 450px) { #bannersec { height: auto !important; } }
+/* Home hero slick slider */
+#home-hero-slider { margin-top: 137px; width: 100%; overflow: hidden; }
+#home-hero-slider .hero-main-slider { width: 100%; margin: 0; }
+#home-hero-slider .hero-main-slider:not(.slick-initialized) > .hero-slide:not(:first-child) { display: none; }
+#home-hero-slider .hero-slide {
+  position: relative; outline: none; width: 100%;
+}
+#home-hero-slider .hero-slide-img {
+  width: 100%; height: 580px; display: block; object-fit: cover; object-position: center;
+}
+#home-hero-slider .hero-slide-overlay {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
+  z-index: 1;
+}
+#home-hero-slider .hero-slide-caption {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 30px 8%;
+}
+#home-hero-slider .slick-slide { height: auto; }
+#home-hero-slider .slick-slide > div { height: 100%; }
+#home-hero-slider .hero-slide-caption h2 {
+  color: #fff; font-size: 42px; font-weight: 700; line-height: 1.15;
+  letter-spacing: 2px; text-transform: uppercase; margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  max-width: 900px;
+}
+#home-hero-slider .hero-slide-accent {
+  display: block; width: 70px; height: 3px; background: #f9a71f;
+  margin: 22px auto 26px;
+}
+#home-hero-slider .hero-cta-btn {
+  display: inline-block; background: #f9a71f; color: #1a1a1a !important;
+  font-size: 14px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 14px 34px;
+  border: none; text-decoration: none !important;
+  transition: background 0.25s ease;
+}
+#home-hero-slider .hero-cta-btn:hover { background: #e89610; color: #000 !important; }
+#home-hero-slider .slick-prev,
+#home-hero-slider .slick-next {
+  z-index: 10; width: 48px; height: 48px;
+  background: transparent !important; filter: none !important;
+  border: none; margin-top: 0; top: 50%;
+  transform: translateY(-50%);
+  text-indent: 0; line-height: 48px; text-align: center;
+}
+#home-hero-slider .slick-prev { left: 20px; }
+#home-hero-slider .slick-next { right: 20px; left: auto; }
+#home-hero-slider .slick-prev:before,
+#home-hero-slider .slick-next:before { display: none !important; content: none !important; }
+#home-hero-slider .slick-prev i,
+#home-hero-slider .slick-next i {
+  font-size: 46px; color: #fff; line-height: 48px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+#home-hero-slider .slick-dots { bottom: 18px; z-index: 5; }
+#home-hero-slider .slick-dots li button:before { color: #fff; opacity: 0.5; font-size: 10px; }
+#home-hero-slider .slick-dots li.slick-active button:before { color: #f9a71f; opacity: 1; }
+@media only screen and (max-width: 768px) {
+  #home-hero-slider .hero-slide-img { height: 420px; }
+  #home-hero-slider .hero-slide-caption h2 { font-size: 24px; letter-spacing: 1px; }
+  #home-hero-slider .slick-prev { left: 8px; }
+  #home-hero-slider .slick-next { right: 8px; }
+}
+@media only screen and (max-width: 450px) {
+  #home-hero-slider { margin-top: 0; }
+  #home-hero-slider .hero-slide-img { height: 360px; }
+  #home-hero-slider .hero-slide-caption h2 { font-size: 18px; }
+}
 #our-brand-carousel .slick-slide { margin: 0 15px; }
 #our-brand-carousel .logo-carousel { margin-top: 0; }
 #our-brand-carousel .slick-slide img { width: 100%; max-height: 80px; object-fit: contain; }
 #our-brand-carousel .logo-carousel-wrapper { position: relative; padding: 0 50px; }
 #our-brand-carousel .logo-carousel .slick-prev { left: 0; z-index: 10; }
 #our-brand-carousel .logo-carousel .slick-next { right: 0; z-index: 10; }
-.slick-track::before, .slick-track::after { display: table; content: ''; }
-.slick-track::after { clear: both; }
-.slick-track { padding: 1rem 0; }
-.slick-loading .slick-track { visibility: hidden; }
-.slick-slide.dragging img { pointer-events: none; }
-.slick-loading .slick-slide { visibility: hidden; }
-.slick-arrow { position: absolute; top: 50%; background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat; color: #fff; filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%); border: none; width: 2rem; height: 1.5rem; text-indent: -10000px; margin-top: -16px; z-index: 99; }
-.slick-arrow.slick-next { right: -40px; transform: rotate(180deg); }
-.slick-arrow.slick-prev { left: -40px; }
-@media (max-width: 768px) { .slick-arrow { width: 1rem; height: 1rem; } }
+#our-brand-carousel .slick-track::before, #our-brand-carousel .slick-track::after { display: table; content: ''; }
+#our-brand-carousel .slick-track::after { clear: both; }
+#our-brand-carousel .slick-track { padding: 1rem 0; }
+#our-brand-carousel .slick-arrow { position: absolute; top: 50%; background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat; color: #fff; filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%); border: none; width: 2rem; height: 1.5rem; text-indent: -10000px; margin-top: -16px; z-index: 99; }
+#our-brand-carousel .slick-arrow.slick-next { right: -40px; transform: rotate(180deg); }
+#our-brand-carousel .slick-arrow.slick-prev { left: -40px; }
+@media (max-width: 768px) { #our-brand-carousel .slick-arrow { width: 1rem; height: 1rem; } }
 @media (max-width: 488px) { #blogsc{ display:none; } }
 .tab_service { margin-bottom: 30px; }
 .images { background: #fff; height: 224px; width: 100%; }
@@ -39,12 +105,61 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
 .h2_color { padding: 0px 20px; color: #51a6d1; font-weight: 600; text-align:left; }
 .p_color { padding: 0px 20px; margin: 0 0 10px; text-align:left; }
 </style>
-<section id="">
-  <div class="container containers">
-    <img class="img-responsive" src="<?= $siteUrl ?>front_theme/images/bannerbg.jpg" alt="Banner">
+<!-- Start Hero Banner Slider -->
+<?php
+$heroSlides = [
+    [
+        'image' => 'front_theme/images/bannerbginer.jpg',
+        'lines' => [
+            'Waterproofing Services',
+            'For Sydney Homes',
+            'With Our Advanced',
+            'Waterproofing Systems',
+        ],
+    ],
+    [
+        'image' => 'front_theme/images/actimg2.jpg',
+        'lines' => [
+            'Protect Your Building Assets',
+            'With Our Advanced Waterproofing Systems',
+        ],
+    ],
+    [
+        'image' => 'front_theme/images/actimg3.jpg',
+        'lines' => [
+            'Talk To The Professionals',
+            'Let Us Help You Find',
+            'The Right Solution',
+        ],
+    ],
+];
+?>
+<section id="home-hero-slider" class="home-hero-slider">
+  <div class="hero-main-slider">
+    <?php foreach ($heroSlides as $slide) : ?>
+    <div class="hero-slide">
+      <img class="hero-slide-img" src="<?= h($siteUrl . $slide['image']) ?>" alt="<?= h($slide['lines'][0] ?? 'CWS Australia') ?>">
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-caption">
+        <h2>
+          <?php
+          $lineCount = count($slide['lines']);
+          foreach ($slide['lines'] as $i => $line) {
+              echo h($line);
+              if ($i < $lineCount - 1) {
+                  echo '<br>';
+              }
+          }
+          ?>
+        </h2>
+        <span class="hero-slide-accent" aria-hidden="true"></span>
+        <a href="<?= $siteUrl ?>contact-us" class="hero-cta-btn">Contact Us Today</a>
+      </div>
+    </div>
+    <?php endforeach; ?>
   </div>
 </section>
-<!-- End Banner -->
+<!-- End Hero Banner Slider -->
 
 <!-- Start About -->
 <section id="aboutus">
@@ -275,7 +390,7 @@ $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
 <?php
 $this->append('script', $this->Html->scriptBlock("
 jQuery(function(){
-  if (jQuery.fn.slick) {
+  if (jQuery.fn.slick && jQuery('.logo-carousel').length && !jQuery('.logo-carousel').hasClass('slick-initialized')) {
     jQuery('.logo-carousel').slick({
       slidesToShow: 6,
       slidesToScroll: 1,

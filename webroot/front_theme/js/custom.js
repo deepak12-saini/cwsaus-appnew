@@ -57,38 +57,49 @@ jQuery(function($){
 	/*  4. SKILL PROGRESS BAR
 	/* ----------------------------------------------------------- */ 
 
-	$('.progress .progress-bar').progressbar({
-		display_text: 'center', percent_format: function(p) {return p + ' %';}});
+	if ($.fn.progressbar && $('.progress .progress-bar').length) {
+		$('.progress .progress-bar').progressbar({
+			display_text: 'center', percent_format: function(p) {return p + ' %';}
+		});
+	}
 
 	/* ----------------------------------------------------------- */
 	/*  5. MIXIT SLIDER
 	/* ----------------------------------------------------------- */  	
 
-	jQuery(function(){
-	    $('#mixit-container').mixItUp();
-	});
+	if ($.fn.mixItUp && $('#mixit-container').length) {
+		$('#mixit-container').mixItUp();
+	}
 		
 	/* ----------------------------------------------------------- */
 	/*  6. FANCYBOX 
 	/* ----------------------------------------------------------- */
 
-	jQuery(document).ready(function() {
+	if ($.fn.fancybox && $(".fancybox").length) {
 		$(".fancybox").fancybox();
-	});	 
+	}
 
 	/* ----------------------------------------------------------- */
 	/*  7. MAIN SLIDER (SLICK SLIDER)
 	/* ----------------------------------------------------------- */
 
-	jQuery('.main-slider').slick({
-		dots: true,
-		infinite: true,
-		speed: 500,
-		autoplay: true,
-		accessibility: false,
-		fade: true,
-		cssEase: 'linear'
-	});
+	if ($.fn.slick && $('#home-hero-slider .hero-main-slider').length) {
+		$('#home-hero-slider .hero-main-slider').slick({
+			dots: true,
+			arrows: true,
+			infinite: true,
+			speed: 600,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 6000,
+			fade: false,
+			pauseOnHover: true,
+			adaptiveHeight: false,
+			prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fa fa-angle-left"></i></button>',
+			nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><i class="fa fa-angle-right"></i></button>'
+		});
+	}
 
 	/* ----------------------------------------------------------- */
 	/*  8. LOGIN MODAL WINDOW
@@ -111,28 +122,33 @@ jQuery(function($){
 	/*  9. COUNTER
 	/* ----------------------------------------------------------- */ 
 
-	  jQuery('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+	if ($.fn.counterUp && $('.counter').length) {
+		$('.counter').counterUp({
+			delay: 10,
+			time: 1000
+		});
+	}
 
 	/* ----------------------------------------------------------- */
 	/*  10. TESTIMONIAL SLIDER (SLICK SLIDER)
 	/* ----------------------------------------------------------- */   
 
-	jQuery('.testimonial-slider').slick({
-		dots: true,
-		infinite: true,
-		speed: 500,
-		autoplay: true,		
-		cssEase: 'linear'
-	});
+	if ($.fn.slick && $('.testimonial-slider').length) {
+		$('.testimonial-slider').slick({
+			dots: true,
+			infinite: true,
+			speed: 500,
+			autoplay: true,
+			cssEase: 'linear'
+		});
+	}
 
 
 	/* ----------------------------------------------------------- */
 	/*  11. CLIENTS BRAND SLIDER (SLICK SLIDER)
 	/* ----------------------------------------------------------- */   
 
+	if ($.fn.slick && $('.clients-brand-slide').length) {
 	$('.clients-brand-slide').slick({
 	  dots: false,
 	  infinite: true,
@@ -169,9 +185,9 @@ jQuery(function($){
 	    // instead of a settings object
 	  ]
 	});
-	
-	
-	
+	}
+
+	if ($.fn.slick && $('.clients-brand-slide2').length) {
 	$('.clients-brand-slide2').slick({
 	  dots: false,
 	  infinite: false,
@@ -209,6 +225,7 @@ jQuery(function($){
 	    // instead of a settings object
 	  ]
 	});
+	}
 
 	/* ----------------------------------------------------------- */
 	/*  12. SCROLL TOP BUTTON

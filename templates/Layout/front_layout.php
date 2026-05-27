@@ -26,7 +26,7 @@ $siteUrl = rtrim($siteUrl ?? '', '/') . '/';
 <?= $this->element('front_footer') ?>
 <script src="<?= $siteUrl ?>front_theme/js/bootstrap.js"></script>
 <script src="<?= $siteUrl ?>front_theme/js/slick.js"></script>
-<script src="<?= $siteUrl ?>front_theme/js/custom.js"></script>
+<script src="<?= $siteUrl ?>front_theme/js/custom.js?v=20260527b"></script>
 <?= $this->fetch('script') ?>
 </body>
 </html>
