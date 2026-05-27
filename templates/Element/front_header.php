@@ -45,10 +45,9 @@ $action = $this->request->getParam('action');
               <li class="<?= ($controller === 'Fronts' && $action === 'index') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>">Home</a></li>
               <li class="<?= ($controller === 'Fronts' && $action === 'about') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>about">About Us</a></li>
               <li class="<?= ($controller === 'Fronts' && $action === 'products') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>projects">Projects</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'suppliers') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>suppliers">Suppliers</a></li>
+              <li class="<?= ($controller === 'Fronts' && $action === 'services') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>services">Services</a></li>
               <li class="<?= ($controller === 'Fronts' && $action === 'consulting') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>consulting">Consulting</a></li>
               <li class="<?= ($controller === 'Fronts' && $action === 'promotions') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>promotions">Promotions</a></li>
-              <li class="<?= ($controller === 'Fronts' && $action === 'services') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>our-services">Our Service</a></li>
               <li class="<?= $controller === 'Blogs' ? 'active' : '' ?>"><a href="<?= $siteUrl ?>blog">Blog</a></li>
               <li class="<?= ($controller === 'Fronts' && $action === 'contact') ? 'active' : '' ?>"><a href="<?= $siteUrl ?>contact-us">Contact</a></li>
             </ul>

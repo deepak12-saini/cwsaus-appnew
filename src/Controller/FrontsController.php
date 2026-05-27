@@ -65,7 +65,7 @@ class FrontsController extends AppController
 
     public function services(): void
     {
-        $this->set('title_for_layout', (defined('SITENAME') ? SITENAME : 'CWS') . ' Our services');
+        $this->set('title_for_layout', (defined('SITENAME') ? SITENAME : 'CWS') . ' Services');
         $galleries = $this->fetchTable('Galleries')->find()->where(['status' => 1])->all();
         $this->set('Gallery', $galleries);
     }

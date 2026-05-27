@@ -37,7 +37,8 @@ class Application extends BaseApplication
             $routes->connect('admin', ['controller' => 'Users', 'action' => 'login', 'prefix' => 'Admin']);
             $routes->connect('about', ['controller' => 'Fronts', 'action' => 'about'], ['_name' => 'about']);
             $routes->connect('products', ['controller' => 'Fronts', 'action' => 'products']);
-            $routes->connect('suppliers', ['controller' => 'Fronts', 'action' => 'suppliers']);
+            $routes->connect('services', ['controller' => 'Fronts', 'action' => 'services']);
+            $routes->connect('suppliers', ['controller' => 'Fronts', 'action' => 'services']);
             $routes->connect('consulting', ['controller' => 'Fronts', 'action' => 'consulting']);
             $routes->connect('promotions', ['controller' => 'Fronts', 'action' => 'promotions']);
             $routes->connect('our-services', ['controller' => 'Fronts', 'action' => 'services']);
