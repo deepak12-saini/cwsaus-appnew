@@ -24,7 +24,7 @@ $pageTitle = $menu && ($menu->main_title ?? $menu->title) ? ($menu->main_title ?
     <div class="row about-page-row">
       <div class="col-md-5 col-sm-12 about-page-visual">
         <div class="about-page-image-wrap">
-          <img src="<?= $siteUrl ?>front_theme/images/logo.png" alt="CWS Australia" class="img-responsive about-page-image">
+          <img src="<?= $siteUrl ?>front_theme/images/guarantee.png" alt="100% Leak Free Guarantee" class="img-responsive about-page-image">
         </div>
       </div>
       <div class="col-md-7 col-sm-12 about-page-content">

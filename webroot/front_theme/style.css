@@ -799,11 +799,12 @@ ul.footsclicn { float: left; padding: 0 0 0 15px; }
 }
 
 #abtsec.about-page .about-page-image {
-  max-width: 280px;
+  max-width: 320px;
   width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.10));
 }
 
 #abtsec.about-page .about-page-content .title-area {
