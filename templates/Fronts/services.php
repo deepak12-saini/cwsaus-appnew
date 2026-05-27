@@ -3,6 +3,8 @@
  * Services page
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'CWS waterproofing services – residential, commercial and liquid waterproofing systems installed by expert tradespeople across Sydney and Australia.');
+$this->assign('meta_keywords', 'waterproofing services Sydney, residential waterproofing, commercial waterproofing, liquid membrane, CWS Australia services');
 
 $serviceCards = [
     [

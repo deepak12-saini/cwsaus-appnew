@@ -4,6 +4,8 @@
  * @var \Cake\ORM\Entity|null $menu
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'About CWS Australia – Over 100 years of combined waterproofing experience. Trusted waterproofing contractor for builders and developers across Australia.');
+$this->assign('meta_keywords', 'about CWS Australia, waterproofing company Australia, waterproofing contractor, professional waterproofing');
 $bannerTitle = $menu && ($menu->banner_title ?? $menu->title) ? ($menu->banner_title ?? $menu->title) : 'About Us';
 $bannerSub = $menu && ($menu->banner_sub_text ?? '') !== '' ? $menu->banner_sub_text : 'Professional waterproofing contracting & installation across Australia';
 $pageTitle = $menu && ($menu->main_title ?? $menu->title) ? ($menu->main_title ?? $menu->title) : 'About Us';

@@ -3,6 +3,8 @@
  * Promotions page
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'CWS Australia promotions – trade pricing, builder packages, and seasonal offers on waterproofing products and installation services across Australia.');
+$this->assign('meta_keywords', 'waterproofing promotions Australia, trade pricing, builder account, CWS Australia offers');
 
 $promoCards = [
     [

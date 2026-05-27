@@ -6,6 +6,8 @@
  * @var \Cake\ORM\ResultSet $RecentBlogs
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'CWS Australia blog – waterproofing tips, product news, installation guides and industry insights for builders, contractors and property owners.');
+$this->assign('meta_keywords', 'waterproofing blog Australia, waterproofing tips, construction waterproofing news, CWS blog');
 $hasPosts = $Blogs && $Blogs->count() > 0;
 
 $featuredPosts = [

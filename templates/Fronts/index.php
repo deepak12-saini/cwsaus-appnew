@@ -6,6 +6,8 @@
  * @var \Cake\ORM\ResultSet $Blogs
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'CWS Australia – Australia\'s number 1 waterproofing contractor and supplier. Expert residential and commercial waterproofing across Sydney, Melbourne, Brisbane and nationwide.');
+$this->assign('meta_keywords', 'waterproofing Sydney, waterproofing contractor Australia, residential waterproofing, commercial waterproofing, CWS Australia, membrane installation');
 ?>
 <!-- Start Banner -->
 <style>

@@ -4,6 +4,8 @@
  * @var \Cake\ORM\Entity|null $menu
  */
 $siteUrl = rtrim($this->Url->build('/', ['fullBase' => true]), '/') . '/';
+$this->assign('meta_description', 'Waterproofing consulting by CWS Australia – design advice, compliance review, defect investigation and project support for builders, engineers and strata managers.');
+$this->assign('meta_keywords', 'waterproofing consulting Australia, waterproofing specification, defect investigation, CWS consulting');
 
 $bannerTitle = ($menu && ($menu->banner_title ?? $menu->title)) ? ($menu->banner_title ?? $menu->title) : 'Consulting';
 $bannerSub = ($menu && ($menu->banner_sub_text ?? '') !== '') ? $menu->banner_sub_text : 'Expert guidance for waterproofing design, compliance and project delivery';
